@@ -1,0 +1,30 @@
+@media only screen and (max-width: 500px) {
+  html {
+    font-size: 10px;
+  }
+  /* body {
+    display: flex;
+    flex-direction: column;
+  } */
+  #blockly {
+    padding: 1px;
+    /* position: fixed;
+    display: block; */
+  }
+
+  #visualization {
+    padding: 1px;
+    /* position: fixed;
+    display: block; */
+  }
+  #dialog,
+  #dialogBorder,
+  #dialogShadow {
+    position: fixed;
+    display: block;
+  }
+  #dialogLinesText,
+  #dialogDoneText {
+    font-size: small;
+  }
+}
