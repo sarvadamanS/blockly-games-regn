@@ -70,8 +70,8 @@ BlocklyDialogs.showDialog = function(content, origin, animate, modal, style,
 
   // Copy all the specified styles to the dialog.
   for (var name in style) {
-  var checkResponsive = window.matchMedia("(max-width: 500px)");
-  if(checkResponsive.matches) style={'width':'50%','left':'5%','top':'15%'};
+  var checkResponsive = window.matchMedia("(max-width: 700px)");
+  if(checkResponsive.matches) style={'width':'50%','right':'5%','top':'15%'};
     dialog.style[name] = style[name];
   }
   if (modal) {

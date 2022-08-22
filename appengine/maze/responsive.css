@@ -1,11 +1,11 @@
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 700px) {
   html {
     font-size: 10px;
   }
-  /* body {
+  body {
     display: flex;
     flex-direction: column;
-  } */
+  }
   #blockly {
     padding: 1px;
     /* position: fixed;
@@ -22,9 +22,16 @@
   #dialogShadow {
     position: fixed;
     display: block;
+    top: 15%;
+    right: 10%;
+    width: 50%;
   }
   #dialogLinesText,
   #dialogDoneText {
     font-size: small;
+  }
+  #dialog img {
+    height: 30px;
+    width: 30px;
   }
 }

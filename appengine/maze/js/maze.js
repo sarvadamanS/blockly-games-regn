@@ -453,20 +453,14 @@ Maze.init = function() {
   var arrow = document.createTextNode(Blockly.FieldDropdown.ARROW_CHAR);
   pegmanButtonArrow.appendChild(arrow);
 
+"use strict";
 
 function _toConsumableArray(arr) {
-  return (
-    _arrayWithoutHoles(arr) ||
-    _iterableToArray(arr) ||
-    _unsupportedIterableToArray(arr) ||
-    _nonIterableSpread()
-  );
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
 
 function _nonIterableSpread() {
-  throw new TypeError(
-    "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
-  );
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 
 function _unsupportedIterableToArray(o, minLen) {
@@ -475,16 +469,11 @@ function _unsupportedIterableToArray(o, minLen) {
   var n = Object.prototype.toString.call(o).slice(8, -1);
   if (n === "Object" && o.constructor) n = o.constructor.name;
   if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
-    return _arrayLikeToArray(o, minLen);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
 }
 
 function _iterableToArray(iter) {
-  if (
-    (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null) ||
-    iter["@@iterator"] != null
-  )
-    return Array.from(iter);
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
 }
 
 function _arrayWithoutHoles(arr) {
@@ -509,74 +498,39 @@ var checkResponsive = window.matchMedia("(max-width: 700px )");
 var resposiveBlocklyDiv = function resposiveBlocklyDiv() {
   var _document7, _document8;
 
-  var _document,
-    _document2,
-    _document3,
-    _document4,
-    _document5,
-    _document5$getElement;
+  var _document, _document2, _document3, _document4, _document5, _document5$getElement;
 
-  var runBtn =
-    (_document7 = document) === null || _document7 === void 0
-      ? void 0
-      : _document7.getElementById("runButton");
-  var resetBtn =
-    (_document8 = document) === null || _document8 === void 0
-      ? void 0
-      : _document8.getElementById("resetButton");
+  var runBtn = (_document7 = document) === null || _document7 === void 0 ? void 0 : _document7.getElementById("runButton");
+  var resetBtn = (_document8 = document) === null || _document8 === void 0 ? void 0 : _document8.getElementById("resetButton");
   [runBtn, resetBtn].forEach(function (el) {
-    el.style.top = "2%";
-    el.style.height = "6vh";
-    el.style.right = "1%";
-    el.style.fontSize = "1rem";
+    el.style.position = "absolute";
+    el.style.top = "13vh";
+    el.style.left = "1vw";
+    el.style.fontSize = "0.9rem";
   });
-  runBtn.style.top = "2%";
-  runBtn.style.height = "6vh";
-  runBtn.style.right = "1%";
-  runBtn.style.fontSize = "1rem";
-  document.body.style.display = "flex";
-  document.body.style.flexDirection = "column";
   blocklyDiv.style.top = "57vh";
   blocklyDiv.style.width = "90vw";
   blocklyDiv.style.height = "37vh";
   blocklyDiv.style.left = "1%"; // Square box
 
-  var visEl =
-    (_document = document) === null || _document === void 0
-      ? void 0
-      : _document.getElementById("visualization").childNodes;
+  var visEl = (_document = document) === null || _document === void 0 ? void 0 : _document.getElementById("visualization").childNodes;
   visEl.forEach(function (el) {
-    el.style.height = "35vh";
+    el.style.height = "36vh";
     el.style.position = "fixed";
-    el.style.top = "24vh";
-    el.style.left = "1%";
+    el.style.top = "21vh";
+    el.style.left = "5%";
   });
-  var dialogBor =
-    (_document2 = document) === null || _document2 === void 0
-      ? void 0
-      : _document2.getElementById("dialogBorder");
-  var dialogShadow =
-    (_document3 = document) === null || _document3 === void 0
-      ? void 0
-      : _document3.getElementById("dialogShadow");
-  var dialogDiv =
-    (_document4 = document) === null || _document4 === void 0
-      ? void 0
-      : _document4.getElementById("dialog");
+  var dialogBor = (_document2 = document) === null || _document2 === void 0 ? void 0 : _document2.getElementById("dialogBorder");
+  var dialogShadow = (_document3 = document) === null || _document3 === void 0 ? void 0 : _document3.getElementById("dialogShadow");
+  var dialogDiv = (_document4 = document) === null || _document4 === void 0 ? void 0 : _document4.getElementById("dialog");
   [dialogBor, dialogDiv, dialogShadow].forEach(function (el) {
     el.style.width = "50vw";
     el.style.height = "auto";
     el.style.top = "15%";
-    el.style.left = "5%";
+    el.style.right = "10%";
     el.style.opacity = "0.9";
   });
-  var img =
-    (_document5 = document) === null || _document5 === void 0
-      ? void 0
-      : (_document5$getElement = _document5.getElementById("dialog")) ===
-          null || _document5$getElement === void 0
-      ? void 0
-      : _document5$getElement.getElementsByTagName("img");
+  var img = (_document5 = document) === null || _document5 === void 0 ? void 0 : (_document5$getElement = _document5.getElementById("dialog")) === null || _document5$getElement === void 0 ? void 0 : _document5$getElement.getElementsByTagName("img");
 
   if (img) {
     _toConsumableArray(img).forEach(function (el) {
@@ -586,8 +540,6 @@ var resposiveBlocklyDiv = function resposiveBlocklyDiv() {
   }
 };
 
-if (checkResponsive.matches) resposiveBlocklyDiv();
-
 var onresize = function onresize(e) {
   var _document6;
 
@@ -596,15 +548,12 @@ var onresize = function onresize(e) {
   blocklyDiv.style.top = Math.max(10, top - window.pageYOffset) + "px";
   blocklyDiv.style.left = rtl ? "10px" : "420px";
   blocklyDiv.style.width = window.innerWidth - 440 + "px";
-  var visEl =
-    (_document6 = document) === null || _document6 === void 0
-      ? void 0
-      : _document6.getElementById("visualization").childNodes;
+  var visEl = (_document6 = document) === null || _document6 === void 0 ? void 0 : _document6.getElementById("visualization").childNodes;
   visEl.forEach(function (el) {
     el.style.width = "400px";
     el.style.height = "auto";
     el.style.position = "fixed";
-    el.style.top = "120px";
+    el.style.top = "150px";
     el.style.left = "1%";
   });
 };
@@ -615,6 +564,7 @@ window.addEventListener("scroll", function () {
 });
 window.addEventListener("resize", onresize);
 onresize(null);
+
 
 
   // Scale the workspace so level 1 = 1.3, and level 10 = 1.0.
