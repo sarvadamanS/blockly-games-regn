@@ -452,118 +452,148 @@ Maze.init = function() {
   var pegmanButtonArrow = document.getElementById('pegmanButtonArrow');
   var arrow = document.createTextNode(Blockly.FieldDropdown.ARROW_CHAR);
   pegmanButtonArrow.appendChild(arrow);
-
-"use strict";
-
-function _toConsumableArray(arr) {
-  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
-}
-
-function _nonIterableSpread() {
-  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
-
-function _iterableToArray(iter) {
-  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
-}
-
-function _arrayWithoutHoles(arr) {
-  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
-}
-
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-
-  for (var i = 0, arr2 = new Array(len); i < len; i++) {
-    arr2[i] = arr[i];
+  
+    function _toConsumableArray(arr) {
+    return (
+      _arrayWithoutHoles(arr) ||
+      _iterableToArray(arr) ||
+      _unsupportedIterableToArray(arr) ||
+      _nonIterableSpread()
+    );
   }
 
-  return arr2;
-}
+  function _nonIterableSpread() {
+    throw new TypeError(
+      "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+    );
+  }
 
-var rtl = BlocklyGames.isRtl();
-var blocklyDiv = document.getElementById("blockly");
-var visualization = document.getElementById("visualization");
-var checkResponsive = window.matchMedia("(max-width: 700px )");
+  function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))
+      return _arrayLikeToArray(o, minLen);
+  }
 
-var resposiveBlocklyDiv = function resposiveBlocklyDiv() {
-  var _document7, _document8;
+  function _iterableToArray(iter) {
+    if (
+      (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null) ||
+      iter["@@iterator"] != null
+    )
+      return Array.from(iter);
+  }
 
-  var _document, _document2, _document3, _document4, _document5, _document5$getElement;
+  function _arrayWithoutHoles(arr) {
+    if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+  }
 
-  var runBtn = (_document7 = document) === null || _document7 === void 0 ? void 0 : _document7.getElementById("runButton");
-  var resetBtn = (_document8 = document) === null || _document8 === void 0 ? void 0 : _document8.getElementById("resetButton");
-  [runBtn, resetBtn].forEach(function (el) {
-    el.style.position = "absolute";
-    el.style.top = "13vh";
-    el.style.left = "1vw";
-    el.style.fontSize = "0.9rem";
-  });
-  blocklyDiv.style.top = "57vh";
-  blocklyDiv.style.width = "90vw";
-  blocklyDiv.style.height = "37vh";
-  blocklyDiv.style.left = "1%"; // Square box
+  function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
 
-  var visEl = (_document = document) === null || _document === void 0 ? void 0 : _document.getElementById("visualization").childNodes;
-  visEl.forEach(function (el) {
-    el.style.height = "36vh";
-    el.style.position = "fixed";
-    el.style.top = "21vh";
-    el.style.left = "5%";
-  });
-  var dialogBor = (_document2 = document) === null || _document2 === void 0 ? void 0 : _document2.getElementById("dialogBorder");
-  var dialogShadow = (_document3 = document) === null || _document3 === void 0 ? void 0 : _document3.getElementById("dialogShadow");
-  var dialogDiv = (_document4 = document) === null || _document4 === void 0 ? void 0 : _document4.getElementById("dialog");
-  [dialogBor, dialogDiv, dialogShadow].forEach(function (el) {
-    el.style.width = "50vw";
-    el.style.height = "auto";
-    el.style.top = "15%";
-    el.style.right = "10%";
-    el.style.opacity = "0.9";
-  });
-  var img = (_document5 = document) === null || _document5 === void 0 ? void 0 : (_document5$getElement = _document5.getElementById("dialog")) === null || _document5$getElement === void 0 ? void 0 : _document5$getElement.getElementsByTagName("img");
+    for (var i = 0, arr2 = new Array(len); i < len; i++) {
+      arr2[i] = arr[i];
+    }
 
-  if (img) {
-    _toConsumableArray(img).forEach(function (el) {
-      el.style.height = "30px";
-      el.style.width = "30px";
+    return arr2;
+  }
+
+  var rtl = BlocklyGames.isRtl();
+  var blocklyDiv = document.getElementById("blockly");
+  var visualization = document.getElementById("visualization");
+  var checkResponsive = window.matchMedia("(max-width: 700px )");
+
+  var resposiveBlocklyDiv = function resposiveBlocklyDiv() {
+    var _document,
+      _document2,
+      _document3,
+      _document4,
+      _document5,
+      _document5$getElement;
+
+    blocklyDiv.style.top = "57vh";
+    blocklyDiv.style.width = "95vw";
+    blocklyDiv.style.height = "auto";
+    blocklyDiv.style.marginBottom = "2vh";
+    blocklyDiv.style.left = "2.5vw"; // Square box
+    // let ratio = window.screen.width / 750;
+    // console.log(ratio);
+    // document.getElementById("runButton").style.transform ="scale(" + ratio + ")";
+
+    var visEl =
+      (_document = document) === null || _document === void 0
+        ? void 0
+        : _document.getElementById("visualization").childNodes;
+    visEl.forEach(function (el) {
+      el.style.height = "43vh";
+      el.style.position = "fixed";
+      el.style.top = "4.5rem";
+      el.style.left = "0";
     });
-  }
-};
+    var dialogBor =
+      (_document2 = document) === null || _document2 === void 0
+        ? void 0
+        : _document2.getElementById("dialogBorder");
+    var dialogShadow =
+      (_document3 = document) === null || _document3 === void 0
+        ? void 0
+        : _document3.getElementById("dialogShadow");
+    var dialogDiv =
+      (_document4 = document) === null || _document4 === void 0
+        ? void 0
+        : _document4.getElementById("dialog");
+    [dialogBor, dialogDiv, dialogShadow].forEach(function (el) {
+      el.style.width = "50vw";
+      el.style.height = "auto";
+      el.style.top = "15%";
+      el.style.right = "10%";
+      el.style.opacity = "0.9";
+    });
+    var img =
+      (_document5 = document) === null || _document5 === void 0
+        ? void 0
+        : (_document5$getElement = _document5.getElementById("dialog")) ===
+            null || _document5$getElement === void 0
+        ? void 0
+        : _document5$getElement.getElementsByTagName("img");
 
-var onresize = function onresize(e) {
-  var _document6;
+    if (img) {
+      _toConsumableArray(img).forEach(function (el) {
+        el.style.height = "30px";
+        el.style.width = "30px";
+      });
+    }
+  };
 
-  var top = visualization.offsetTop;
-  if (checkResponsive.matches) return resposiveBlocklyDiv();
-  blocklyDiv.style.top = Math.max(10, top - window.pageYOffset) + "px";
-  blocklyDiv.style.left = rtl ? "10px" : "420px";
-  blocklyDiv.style.width = window.innerWidth - 440 + "px";
-  var visEl = (_document6 = document) === null || _document6 === void 0 ? void 0 : _document6.getElementById("visualization").childNodes;
-  visEl.forEach(function (el) {
-    el.style.width = "400px";
-    el.style.height = "auto";
-    el.style.position = "fixed";
-    el.style.top = "150px";
-    el.style.left = "1%";
+  var onresize = function onresize(e) {
+    var _document6;
+
+    var top = visualization.offsetTop;
+    if (checkResponsive.matches) return resposiveBlocklyDiv();
+    blocklyDiv.style.top = Math.max(10, top - window.pageYOffset) + "px";
+    blocklyDiv.style.left = rtl ? "10px" : "420px";
+    blocklyDiv.style.width = window.innerWidth - 440 + "px";
+    var visEl =
+      (_document6 = document) === null || _document6 === void 0
+        ? void 0
+        : _document6.getElementById("visualization").childNodes;
+    visEl.forEach(function (el) {
+      el.style.width = "400px";
+      el.style.height = "auto";
+      el.style.position = "fixed";
+      el.style.top = "150px";
+      el.style.left = "1%";
+    });
+  };
+
+  window.addEventListener("scroll", function () {
+    onresize(null);
+    Blockly.svgResize(BlocklyInterface.workspace);
   });
-};
-
-window.addEventListener("scroll", function () {
+  window.addEventListener("resize", onresize);
   onresize(null);
-  Blockly.svgResize(BlocklyInterface.workspace);
-});
-window.addEventListener("resize", onresize);
-onresize(null);
 
 
 

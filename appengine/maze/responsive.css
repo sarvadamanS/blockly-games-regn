@@ -1,21 +1,23 @@
 @media only screen and (max-width: 700px) {
   html {
-    font-size: 10px;
+    font-size: 21px;
   }
-  body {
+  /* body {
     display: flex;
     flex-direction: column;
-  }
+  } */
   #blockly {
     padding: 1px;
-    /* position: fixed;
-    display: block; */
+    position: fixed;
   }
 
   #visualization {
     padding: 1px;
     /* position: fixed;
-    display: block; */
+    height: 36 !important;
+    display: block;
+    left: -1.5em !important;
+    top: 5em !important; */
   }
   #dialog,
   #dialogBorder,
@@ -26,12 +28,48 @@
     right: 10%;
     width: 50%;
   }
-  #dialogLinesText,
-  #dialogDoneText {
-    font-size: small;
+  #dialogDone div {
+    font-size: 1rem !important;
+  }
+  #runButton,
+  #resetButton {
+    transform: scale(0.85);
+    position: absolute;
+    left: 5.5rem !important;
+    top: 1.4rem !important;
+  }
+
+  #pegmanButton {
+    transform: scale(0.75);
+    position: absolute;
+    right: 0em !important;
+    top: 1.5em !important;
+  }
+  #languageMenu {
+    font-size: 1rem;
+    transform: scale(0.9);
+    position: absolute;
+    right: 0em !important;
+    top: 0.5em !important;
+  }
+  .farSide button {
+    font-size: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+  }
+  #capacity {
+    top: 4.5rem !important;
+    font-size: 1rem;
+  }
+  h1 {
+    transform: scale(0.7);
+    position: absolute;
+    left: -2.5em !important;
+    top: -0.8em !important;
   }
   #dialog img {
     height: 30px;
     width: 30px;
   }
 }
+

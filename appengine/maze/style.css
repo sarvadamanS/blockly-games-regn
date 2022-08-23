@@ -21,7 +21,7 @@ html[dir="RTL"] #capacityBubble {
   color: #fff;
   padding: 5px 1em;
   border-radius: 15px;
-  background-color: rgba(64,64,64,.7);
+  background-color: rgba(64, 64, 64, 0.7);
   font-size: large;
 }
 .capacityNumber {
@@ -65,12 +65,12 @@ img[src$="help_down.png"] {
 }
 
 /* 'Look' icon */
-#look>path {
+#look > path {
   display: none;
   fill: none;
   stroke-width: 10;
   stroke-linecap: round;
-  stroke-opacity: .7;
+  stroke-opacity: 0.7;
 }
 
 /* Buttons */
@@ -89,24 +89,24 @@ html[dir="RTL"] button.primary {
 #pegmanButton:active {
   border: 1px solid #ddd !important;
 }
-#pegmanButton>img {
+#pegmanButton > img {
   margin-left: -0.5ex;
-  margin-right: .5ex;
+  margin-right: 0.5ex;
   height: 38px;
   width: 49px;
   background-position: -980px 0;
-  opacity: .8;
+  opacity: 0.8;
 }
-html[dir="RTL"] #pegmanButton>img {
-  margin-left: .5ex;
+html[dir="RTL"] #pegmanButton > img {
+  margin-left: 0.5ex;
   margin-right: -0.5ex;
 }
-#pegmanButton>span {
+#pegmanButton > span {
   position: absolute;
-  top: .8ex;
+  top: 0.8ex;
   margin-left: -15px;
 }
-html[dir="RTL"] #pegmanButton>span {
+html[dir="RTL"] #pegmanButton > span {
   margin-right: -15px;
 }
 #pegmanMenu {
@@ -116,14 +116,22 @@ html[dir="RTL"] #pegmanButton>span {
   display: none;
   position: absolute;
 }
-#pegmanMenu>div {
+#pegmanMenu > div {
   background-color: #fff;
 }
-#pegmanMenu>div:hover {
+#pegmanMenu > div:hover {
   background-color: #57e;
 }
-#pegmanMenu>div>img {
+#pegmanMenu > div > img {
   height: 38px;
   width: 49px;
   background-position: -980px 0;
 }
+#runButton,
+#resetButton {
+  transform: scale(1);
+}
+h1 {
+  transform: scale(1);
+}
+
